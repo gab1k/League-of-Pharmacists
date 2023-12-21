@@ -78,7 +78,7 @@ CREATE TABLE transactions
 (
     transactions_id serial PRIMARY KEY,
     user_id         int                      NOT NULL,
-    bet_id          int                      NOT NULL,
+    bet_id          int,
     amount          int                      NOT NULL,
     time            timestamp with time zone NOT NULL,
     type            transaction_type         NOT NULL,
