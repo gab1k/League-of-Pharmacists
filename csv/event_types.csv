@@ -1,10 +1,11 @@
 name,is_online
-Хоккей,true
-Теннис,true
-Волейбол,true
+Хоккей,false
+Теннис,false
+Волейбол,false
 Бокс,false
-Баскетбол,true
+Баскетбол,false
 Гольф,false
-Плавание,true
+Плавание,false
 Бег,false
-Борьба,true
+Борьба,false
+Шахматы,true
