@@ -1,0 +1,11 @@
+name,surname,sex,passport,birthdate,registration_date,city,mail,phone_number
+John,Doe,male,4012 234322,1985-07-12,2022-03-25,New York,john@example.com,123-456-7890
+Alice,Johnson,female,4014 234234,1990-11-30,2022-05-18,London,alice@example.com,987-654-3210
+Michael,Smith,male,4022 123123,1978-04-05,2022-02-10,Sydney,michael@example.com,456-789-0123
+Anna,Brown,female,4019 008908,1995-09-22,2022-07-29,Paris,anna@example.com,789-012-3456
+David,Lee,male,4013 234322,1989-12-17,2022-08-14,Tokyo,david@example.com,012-345-6789
+Maria,Garcia,female,4015 876811,1980-03-28,2022-09-05,Madrid,maria@example.com,345-678-9012
+Alex,Nguyen,male,4023 123123,1992-06-08,2022-11-19,Berlin,alex@example.com,678-901-2345
+Sofia,Kim,female,4020 898989,1987-01-14,2022-10-02,Seoul,sofia@example.com,901-234-5678
+James,Wang,male,4014 256755,1983-08-03,2022-12-07,Beijing,james@example.com,234-567-8901
+Lily,Chen,female,4016 568942,1998-05-10,2023-01-15,Shanghai,lily@example.com,567-890-1234
