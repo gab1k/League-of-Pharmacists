@@ -1,3 +1,5 @@
+SET SEARCH_PATH = league_of_pharmacist;
+
 -- Заполнение таблицы users
 INSERT INTO users (name, surname, sex, passport, birthdate, registration_date, city, mail, phone_number)
 VALUES ('John', 'Doe', 'male', '4024 777777', '1990-05-15', '2023-01-01', 'New York', 'john@example.com', '123-456-7890');
@@ -28,29 +30,29 @@ VALUES (1, 1, 500, '2023-07-18 15:01:00+00', 'withdrawal');
 
 -- Заполнение таблиц из файлов
 COPY users(name, surname, sex, passport, birthdate, registration_date, city, mail, phone_number)
-FROM '/Users/timurabdulkadirov/DataGripProjects/Project/csv/users.csv'
+FROM './csv/users.csv'
 DELIMITER ',' CSV HEADER;
 
 COPY event_types (name, is_online)
-FROM '/Users/timurabdulkadirov/DataGripProjects/Project/csv/event_types.csv'
+FROM './csv/event_types.csv'
 DELIMITER ',' CSV HEADER;
 
 COPY events (event_type_id, event_name, start_time)
-FROM '/Users/timurabdulkadirov/DataGripProjects/Project/csv/event.csv'
+FROM './csv/event.csv'
 DELIMITER ',' CSV HEADER;
 
 COPY  acceptable_conditions (event_type_id, name_bet_condition)
-FROM '/Users/timurabdulkadirov/DataGripProjects/Project/csv/acceptable_condition.csv'
+FROM './csv/acceptable_condition.csv'
 DELIMITER ',' CSV HEADER;
 
 COPY  bets (user_id, event_id, acceptable_condition_id, ratio, time, amount)
-FROM '/Users/timurabdulkadirov/DataGripProjects/Project/csv/bets.csv'
+FROM './csv/bets.csv'
 DELIMITER ',' CSV HEADER;
 
 COPY ratios (event_id, acceptable_condition_id, ratio, is_lost, start_time, end_time)
-FROM '/Users/timurabdulkadirov/DataGripProjects/Project/csv/ratio.csv'
+FROM './csv/ratio.csv'
 DELIMITER ',' CSV HEADER;
 
 COPY  transactions(user_id, bet_id, amount, time, type)
-FROM '/Users/timurabdulkadirov/DataGripProjects/Project/csv/transactions.csv'
+FROM './csv/transactions.csv'
 DELIMITER ',' CSV HEADER;
