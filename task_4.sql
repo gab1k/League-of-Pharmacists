@@ -14,7 +14,7 @@ VALUES (1, 'Барселона - Зенит', '2023-12-31 23:59:59+00');
 
 -- Заполнение таблицы acceptable_conditions
 INSERT INTO acceptable_conditions (event_type_id, name_bet_condition)
-VALUES (1, 'Победа команды А');
+VALUES (1, 'Победа первой команды');
 
 -- Заполнение таблицы ratios
 INSERT INTO ratios (event_id, acceptable_condition_id, ratio, is_lost, start_time, end_time)
