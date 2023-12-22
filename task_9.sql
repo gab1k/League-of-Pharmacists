@@ -15,7 +15,7 @@ BEGIN
                 VALUES (r.user_id, r.bet_id, r.amount, NEW.end_time, 'withdrawal');
             ELSE
                 INSERT INTO transactions (user_id, bet_id, amount, time, type)
-                VALUES (r.user_id, r.bet_id, (1 - r.ratio) * r.amount, NEW.end_time, 'replenishment');
+                VALUES (r.user_id, r.bet_id, (r.ratio - 1) * r.amount, NEW.end_time, 'replenishment');
             END IF;
         END LOOP;
     RETURN NULL;
@@ -35,20 +35,21 @@ EXECUTE PROCEDURE add_transaction_for_all_users_by_event();
 
 -- insert into events (event_type_id, event_name, start_time)
 -- values (1, 'Игра для теста №1', '2024-02-02 10:00:00');
---
+
 -- insert into ratios (event_id, acceptable_condition_id, ratio, start_time, end_time)
--- values (12, 1, 1.5, '2024-02-02 10:00:00', '9999-12-12 09:00:00.000000 +00:00');
---
+-- values (13, 1, 1.5, '2024-02-02 10:00:00', '9999-12-12 09:00:00.000000 +00:00');
+
 -- insert into bets (user_id, event_id, acceptable_condition_id, ratio, time, amount)
--- values (1, 12, 1, 1.5, '2024-02-02 10:15:00', 600),
---         (2, 12, 1, 1.5, '2024-02-02 10:20:00', 1000);
---
+-- values (1, 13, 1, 1.5, '2024-02-02 10:15:00', 600),
+--         (2, 13, 2, 3, '2024-02-02 10:20:00', 1000);
+
 -- update ratios
 -- set end_time = '2024-02-02 11:00:00'
--- where event_id=12 and acceptable_condition_id=1;
---
+-- where event_id=13 and acceptable_condition_id=1;
+
 -- insert into ratios (event_id, acceptable_condition_id, ratio, is_lost, start_time, end_time)
--- values (12, 1, 1.5, false, '2024-02-02 11:00:00', '2024-02-02 12:00:00');
+-- values (13, 1, 2, false, '2024-02-02 11:00:00', '2024-02-02 12:00:00'),
+--        (13, 2, 1.2, false, '2024-02-02 11:00:00', '2024-02-02 12:00:00');
 
 
 
