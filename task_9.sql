@@ -12,7 +12,7 @@ BEGIN
         LOOP
             IF NEW.is_lost = true THEN
                 INSERT INTO transactions (user_id, bet_id, amount, time, type)
-                VALUES (r.user_id, r.bet_id, r.ratio * r.amount, NEW.end_time, 'withdrawal');
+                VALUES (r.user_id, r.bet_id, r.amount, NEW.end_time, 'withdrawal');
             ELSE
                 INSERT INTO transactions (user_id, bet_id, amount, time, type)
                 VALUES (r.user_id, r.bet_id, r.ratio * r.amount, NEW.end_time, 'replenishment');
