@@ -32,7 +32,10 @@ $$ LANGUAGE PLPGSQL;
 
 -- Тест процедуры
 
--- call default_initializing_ratios_by_event(12, 1.1);
+
+-- insert into events (event_type_id, event_name, start_time) 
+-- values (1, 'game test', '2024-12-12 09:00:00');
+-- call default_initializing_ratios_by_event(14, 1.1);
 
 
 -- Функция, возвращающая n самых прибыльных типов события
@@ -45,7 +48,7 @@ BEGIN
                        FROM (SELECT name, -1 * sum_by_type AS sum_by_type
                              FROM (SELECT DISTINCT event_types.name,
                                                    transactions.type,
-                                                   sum(transactions.amount * bets.ratio) OVER (PARTITION BY name, type) AS sum_by_type
+                                                   sum(transactions.amount) OVER (PARTITION BY name, type) AS sum_by_type
                                    FROM transactions
                                             INNER JOIN bets ON transactions.bet_id = bets.bet_id
                                             INNER JOIN events ON bets.event_id = events.event_id
@@ -55,7 +58,7 @@ BEGIN
                              SELECT name, sum_by_type AS sum_by_type
                              FROM (SELECT DISTINCT event_types.name,
                                                    transactions.type,
-                                                   sum(transactions.amount * bets.ratio) OVER (PARTITION BY name, type) AS sum_by_type
+                                                   sum(transactions.amount) OVER (PARTITION BY name, type) AS sum_by_type
                                    FROM transactions
                                             INNER JOIN bets ON transactions.bet_id = bets.bet_id
                                             INNER JOIN events ON bets.event_id = events.event_id
