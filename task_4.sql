@@ -18,7 +18,7 @@ VALUES (1, 'Победа команды А');
 
 -- Заполнение таблицы ratios
 INSERT INTO ratios (event_id, acceptable_condition_id, ratio, is_lost, start_time, end_time)
-VALUES (1, 1, 1.9, true, '2023-07-20 18:00:00+00', '2023-07-20 23:59:59+00');
+VALUES (1, 1, 1.9, null, '2023-07-20 18:00:00+00', '2023-07-20 23:59:59+00');
 
 -- Заполнение таблицы bets
 INSERT INTO bets (user_id, event_id, acceptable_condition_id, ratio, time, amount)
