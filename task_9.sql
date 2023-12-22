@@ -79,3 +79,8 @@ EXECUTE PROCEDURE add_free_bet_transaction();
 -- insert into users (name, surname, sex, passport, birthdate, registration_date, city, mail, phone_number)
 -- values ('Michael', 'Jordan', 'male', '123456', '1963-02-17', NOW(), 'Moscow', 'lol@rambler.ru', '88005553535'),
 --         ('John', 'Clinton', 'male', '987654', '2000-02-17', NOW(), 'Boston', 'john@mail.com', '84959951030');
+
+
+-- Удаление транзакции
+
+drop transaction free_bet_for_new_users on users;
