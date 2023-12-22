@@ -1,3 +1,5 @@
+SET SEARCH_PATH = league_of_pharmacist;
+
 -- Вставка матча в таблицу events
 INSERT INTO events (event_type_id, event_name, start_time)
 VALUES (1, 'ПСЖ - Боруссия', '2023-12-23 18:00');
