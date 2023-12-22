@@ -46,16 +46,15 @@ CREATE TABLE acceptable_conditions
 
 CREATE TABLE ratios
 (
+    ratio_id                serial PRIMARY KEY,
     event_id                int,
     acceptable_condition_id int,
     ratio                   float CHECK ( ratio >= 1.0 ),
     is_lost                 bool,
     start_time              timestamp with time zone NOT NULL,
     end_time                timestamp with time zone NOT NULL,
-    primary key (event_id, acceptable_condition_id),
     foreign key (event_id) references events (event_id),
     foreign key (acceptable_condition_id) references acceptable_conditions (acceptable_condition_id)
-
 );
 
 CREATE TABLE bets
