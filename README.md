@@ -1,2 +1,8 @@
 # League-of-Pharmacists
-the database describing the bookmaker's office "league of pharmacists"
+База данных, описывающая букмекерскую контору ЛИГА АБТЕкарей (ЛИтвинов ГАбидуллин АБдулкадиров ТЕрентьев)
+
+**Версионность** 
+Табличка _ratios_ является версионно SCD: ТИП 2.
+
+**Факты**
+Таблички _events_ и _transactions_ являются фактом
