@@ -23,8 +23,10 @@ ORDER BY ratios.event_id;
 
 -- обновление коэфицента на победу ПСЖ
 UPDATE ratios
-SET ratio = 1.2
+SET end_time = NOW()
 WHERE event_id = 12 AND acceptable_condition_id = 1;
+INSERT INTO ratios(event_id, acceptable_condition_id, ratio, is_lost, start_time, end_time)
+VALUES (13, 1, 1.2, NULL, '2023-12-23 18:00', '9999-12-23 19:45');
 
 -- обновление времени матча ПСЖ - Боруссия
 UPDATE events
