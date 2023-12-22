@@ -1,3 +1,5 @@
+SET SEARCH_PATH = league_of_pharmacist;
+
 -- 1
 
 SELECT
