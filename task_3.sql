@@ -6,7 +6,7 @@ SET SEARCH_PATH = league_of_pharmacist;
 
 create type sex_type AS ENUM ('male', 'female');
 
-CREATE TABLE users
+CREATE TABLE usersзапросы оставляю, у других тоже простые
 (
     user_id           serial PRIMARY KEY,
     name              varchar(50) NOT NULL,
